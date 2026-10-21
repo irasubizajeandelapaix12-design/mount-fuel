@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MountFuel - Services</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #0a0a0a;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #facc15;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  min-height: 90vh;
+  background: linear-gradient(120deg, #0a0a0a, #1f2937);
+  color: white;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  color: #facc15;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #d1d5db;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: #facc15;
+  color: black;
+}
+
+.btn.secondary {
+  border: 2px solid #facc15;
+  color: #facc15;
+}
+
+.btn.secondary:hover {
+  background: #facc15;
+  color: black;
+}
+
+/* SERVICES SECTION */
+.services {
+  padding: 80px 10%;
+  background: #111827;
+  color: white;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #facc15;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-box {
+  background: #1f2937;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  background: #272f3d;
+}
+
+.service-box h3 {
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.service-box p {
+  color: #d1d5db;
+  font-size: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+nav{
+    background:#0d1b2a;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    color:#ffb703;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ffb703;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html">
+    <img src="e:\my project\mount fuel\ChatGPT Image May 25, 2026, 03_17_31 PM.png" alt="MountFuel Logo" width="100">
+   </a>
+    <div class="logo"></div>
+
+    <ul>
+        <li><a href="homepage of mountfuel.html">Home</a></li>
+        <li><a href="about page ikora neza.html">About Us</a></li>
+        <li><a href="services section of mount fuel.html">Services</a></li>
+        <li><a href="online price of mount fuel.html">Fuel Prices</a></li>
+        <li><a href="fuelstation of mountfuel.html">Stations</a></li>
+        <li><a href="orderfuel of mountfuel.html">Order Fuel</a></li>
+        <li><a href="contact page.html">Contact</a></li>
+        <li><a href="map station of mount fuel.html">map</a></li>
+    </ul>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Reliable Fuel & Energy Solutions</h1>
+    <p>
+      MountFuel itanga fuel services zihuse kandi zizewe ku bigo n’abantu ku giti cyabo.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="services section of mount fuel.html" class="btn primary">Our Services</a>
+      <a href="contact page.html" class="btn secondary">Contact Us</a>
+    </div>
+  </div>
+
+  <div>
+    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=60" width="420">
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+  <h2>Our Services</h2>
+
+  <div class="service-container">
+
+    <div class="service-box">
+      <h3>Fuel Delivery</h3>
+      <p>we produce petrol and diesel every where fast and in a reliable way.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Fuel Station Supply</h3>
+      <p>we produce fuel in stations every where in all country.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Industrial Energy</h3>
+      <p>we produce energy solutions in industries and big banks.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Emergency Fuel</h3>
+      <p>we provide emergency fuel services whenever needed.</p>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mount Fuel Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.login-container{
+width:400px;
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.logo{
+text-align:center;
+font-size:32px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.logo span{
+color:#ff5722;
+}
+
+.subtitle{
+text-align:center;
+color:#666;
+margin-bottom:25px;
+}
+
+.input-group{
+margin-bottom:20px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:6px;
+font-weight:600;
+}
+
+.input-group input{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
+}
+
+.input-group input:focus{
+outline:none;
+border-color:#ff5722;
+}
+
+.password-box{
+position:relative;
+}
+
+.password-box button{
+position:absolute;
+right:10px;
+top:50%;
+transform:translateY(-50%);
+background:none;
+border:none;
+cursor:pointer;
+font-size:14px;
+color:#ff5722;
+}
+
+.options{
+display:flex;
+justify-content:space-between;
+margin-bottom:20px;
+font-size:14px;
+}
+
+.options a{
+text-decoration:none;
+color:#ff5722;
+}
+
+.login-btn{
+width:100%;
+padding:13px;
+background:#ff5722;
+border:none;
+border-radius:8px;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.login-btn:hover{
+background:#e64a19;
+}
+
+.message{
+margin-top:15px;
+text-align:center;
+font-size:14px;
+font-weight:bold;
+}
+
+.footer{
+text-align:center;
+margin-top:20px;
+}
+
+.footer a{
+text-decoration:none;
+color:#ff5722;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+<div class="logo">
+MOUNT<span>FUEL</span>
+</div>
+
+<p class="subtitle">
+Login to your account
+</p>
+
+<form id="loginForm">
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" id="email" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+
+<div class="password-box">
+<input type="password" id="password" required>
+<button type="button" onclick="togglePassword()">
+Show
+</button>
+</div>
+
+</div>
+
+<div class="options">
+<label>
+<input type="checkbox">
+ Remember Me
+</label>
+
+<a href="forgot password.html">
+Forgot Password?
+</a>
+</div>
+
+<button type="submit" class="login-btn">
+LOGIN
+</button>
+
+<div class="message" id="message"></div>
+
+</form>
+
+<div class="footer">
+Don't have an account?
+<a href="register.html">
+Create Account
+</a>
+</div>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+let pass=document.getElementById("password");
+
+if(pass.type==="password"){
+pass.type="text";
+}else{
+pass.type="password";
+}
+
+}
+
+document.getElementById("loginForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+
+let savedEmail=localStorage.getItem("email");
+let savedPassword=localStorage.getItem("password");
+
+let msg=document.getElementById("message");
+
+if(savedEmail===null){
+
+msg.style.color="red";
+msg.innerHTML="No account found. Please register first.";
+return;
+
+}
+
+if(email===savedEmail && password===savedPassword){
+
+msg.style.color="green";
+msg.innerHTML="Login successful...";
+
+setTimeout(()=>{
+window.location.href="homepage of mountfuel.html";
+},1000);
+
+}else{
+
+msg.style.color="red";
+msg.innerHTML="Invalid Email or Password.";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

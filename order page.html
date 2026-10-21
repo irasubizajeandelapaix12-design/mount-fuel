@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Fuel - Mount Fuel</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:50px auto;
+}
+
+.order-box{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#ff9800;
+    color:white;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e68900;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="order-box">
+
+        <h1>Order Fuel</h1>
+
+        <form>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Fuel Type</label>
+                <select required>
+                    <option value="">Select Fuel Type</option>
+                    <option>Petrol</option>
+                    <option>Diesel</option>
+                    <option>Kerosene</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Quantity (Litres)</label>
+                <input type="number" placeholder="Enter quantity in litres" required>
+            </div>
+
+            <div class="form-group">
+                <label>Delivery Location</label>
+                <textarea rows="4" placeholder="Enter delivery address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Payment Method</label>
+                <select required>
+                    <option value="">Select Payment Method</option>
+                    <option>Mobile Money</option>
+                    <option>Credit Card</option>
+                    <option>Cash on Delivery</option>
+                    <option>Bank Transfer</option>
+                </select>
+            </div>
+
+            <button type="submit">Place Order</button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

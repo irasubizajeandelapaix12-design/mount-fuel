@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MountFuel - Stations Map</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #0a0a0a;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #facc15;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 60px 10%;
+  background: linear-gradient(120deg, #0a0a0a, #1f2937);
+  color: white;
+}
+
+.header h1 {
+  font-size: 42px;
+  color: #facc15;
+}
+
+.header p {
+  color: #d1d5db;
+  margin-top: 10px;
+}
+
+/* MAP SECTION */
+.map-section {
+  padding: 60px 10%;
+  background: #111827;
+  color: white;
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* STATIONS LIST */
+.stations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.station-card {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.station-card:hover {
+  transform: translateY(-5px);
+  background: #272f3d;
+}
+
+.station-card h3 {
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.station-card p {
+  color: #d1d5db;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #facc15;
+  color: black;
+  font-size: 12px;
+  border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+   <a href="index.html">
+    <img src="e:\my project\mount fuel\ChatGPT Image May 25, 2026, 03_17_31 PM.png" alt="MountFuel Logo" width="100">
+   </a>
+  <div class="logo"></div>
+  <div>
+     <a href="homepage of mountfuel.html">Home</a>
+        <a href="about page ikora neza.html">About Us</a>
+        <a href="services section of mount fuel.html">Services</a>
+        <a href="online price of mount fuel.html">Fuel Prices</a>
+        <a href="fuelstation of mountfuel.html">Stations</a>
+        <a href="orderfuel of mountfuel.html">Order Fuel</a>
+        <a href="contact page.html">Contact</a>
+        <a href="map station of mount fuel.html">map</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="header" id="home">
+  <h1>Our Fuel Stations</h1>
+  <p>search station of MountFuel which nearest you</p>
+</section>
+
+<!-- MAP + STATIONS -->
+<section class="map-section" id="stations">
+
+  <!-- MAP -->
+  <div class="map-container">
+    <!-- Kigali Rwanda Map Embed -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127315.0!2d30.0619!3d-1.9441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d7df1a1a1a1a1a%3A0x123456789abcdef!2sKigali!5e0!3m2!1sen!2srw!4v0000000000000">
+    </iframe>
+  </div>
+
+  <!-- STATIONS LIST -->
+  <h2 style="text-align:center; color:#facc15; margin-bottom:30px;">
+    Available Stations
+  </h2>
+
+  <div class="stations">
+
+    <div class="station-card">
+      <h3>Kigali Central Station</h3>
+      <p>📍 Nyarugenge District</p>
+      <p>⛽ Petrol, Diesel, Kerosene</p>
+      <span class="badge">Open 24/7</span>
+    </div>
+
+    <div class="station-card">
+      <h3>Remera Station</h3>
+      <p>📍 Gasabo District</p>
+      <p>⛽ Petrol & Diesel</p>
+      <span class="badge">Open 24/7</span>
+    </div>
+
+    <div class="station-card">
+      <h3>Nyabugogo Station</h3>
+      <p>📍 Kigali City</p>
+      <p>⛽ All Fuel Types</p>
+      <span class="badge">High Demand</span>
+    </div>
+
+    <div class="station-card">
+      <h3>Kicukiro Station</h3>
+      <p>📍 Kicukiro District</p>
+      <p>⛽ Petrol & Industrial Fuel</p>
+      <span class="badge">Reliable Supply</span>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
