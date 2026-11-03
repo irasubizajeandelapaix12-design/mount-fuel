@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | MountFuel</title>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff5722; /* Energizing orange/fuel color */
+            --secondary-color: #1a1a1a; /* Deep charcoal black */
+            --bg-color: alice blue;
+            --text-color: #333333;
+            --light-text: #666666;
+            --white: alice blue;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            width: 100%;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: 55% 45%;
+            overflow: hidden;
+        }
+
+        /* --- Form Section --- */
+        .form-section {
+            padding: 50px;
+        }
+
+        .form-section h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .form-section p {
+            color: var(--light-text);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-group input, 
+        .input-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e1e5eb;
+            background: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .input-group textarea {
+            resize: none;
+            height: 140px;
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--light-text);
+            pointer-events: none;
+            transition: var(--transition);
+            background-color: var(--white);
+            padding: 0 4px;
+        }
+
+        .input-group textarea ~ label {
+            top: 25px;
+        }
+
+        /* Floating Label Animation */
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label,
+        .input-group textarea:focus ~ label,
+        .input-group textarea:valid ~ label {
+            top: 0;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .input-group input:focus, 
+        .input-group textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(255, 87, 34, 0.2);
+        }
+
+        .submit-btn:hover {
+            background-color: #e04714;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* --- Info Section --- */
+        .info-section {
+            background-color: var(--secondary-color);
+            padding: 50px;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Subtle design element background */
+        .info-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 87, 34, 0.1);
+            border-radius: 50%;
+        }
+
+        .info-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .info-header p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .details-list {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .details-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            color: black
+        }
+
+        .details-item .icon {
+            margin-right: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 868px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-section, .info-section {
+                padding: 40px 30px;
+            }
+
+            .info-section {
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">
+    <img src="e:\my project\mount fuel\ChatGPT Image May 25, 2026, 03_17_31 PM.png" alt="MountFuel Logo" width="100">
+   </a>
+
+    <div class="contact-container">
+        <!-- Contact Form Side -->
+        <div class="form-section">
+            <h2>Get in Touch</h2>
+            <p>Have a question or feedback about MountFuel? Drop us a message and the team will get right back to you.</p>
+            
+            <form action="#" method="POST" onsubmit="handleSubmit(event)">
+                <div class="input-group">
+                    <input type="text" id="name" required autocomplete="off">
+                    <label for="name">Your Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" required autocomplete="off">
+                    <label for="email">Email Address</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="subject" required autocomplete="off">
+                    <label for="subject">Subject</label>
+                </div>
+
+                <div class="input-group">
+                    <textarea id="message" required></textarea>
+                    <label for="message">How can we help?</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Info Panels Side -->
+        <div class="info-section">
+            <div class="info-header">
+                <h3>Contact Information</h3>
+                <p>Fill out the form or reach out directly through our channels below.</p>
+            </div>
+
+            <ul class="details-list">
+                <li class="details-item">
+                    <!-- Simple Unicode or text icons to keep it dependency-free -->
+                    <span class="icon">✉</span>
+                    <span>support@mountfuel.com</span>
+                </li>
+                <li class="details-item">
+                    <span class="icon">📞</span>
+                    <span>+250 738 633 035</span>
+                </li>
+                <li class="details-item">
+                    <span class="icon">📍</span>
+                    <span>Rubavu, Rwanda</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Simple handler to prevent page reload on form submit
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            alert(`Thank you, ${name}! Your message has been sent. We'll reply to ${email} shortly.`);
+            
+            // Clear the form
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Byose mu Imwe</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: rgb(45, 151, 243);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #1a73e8;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1557b0;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none; /* Izagaragara gusa habaye ikosa */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>OPEN AN ACCOUNT</h2>
+        <form id="myAppForm">
+            <div class="form-group">
+                <label>full names</label>
+                <input type="text" id="username" placeholder="example: Dukundimana Honore" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Igihozogajumeghan@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="pass1" placeholder="*******" required>
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="pass2" placeholder="*******" required>
+                <p id="msg" class="error">Passwords do not match!</p>
+            </div>
+
+            <button type="submit">REGISTER</button>
+        </form>
+        <div style="text-align: center; margin-top: 15px;">
+            <p>Already have an account? <a href="loginform.html" style="color: #1a73e8; text-decoration: none; font-weight: bold;">Login here</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('myAppForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Birinda page guhita yirefreshing-a
+
+            const email = document.getElementById('email').value;
+            const p1 = document.getElementById('pass1').value;
+            const p2 = document.getElementById('pass2').value;
+            const msg = document.getElementById('msg');
+
+            if (p1 !== p2) {
+                msg.style.display = 'block'; // Kwerekana ikosa
+            } else {
+                msg.style.display = 'none';
+                localStorage.setItem("email", email);
+                localStorage.setItem("password", p1);
+                alert('THANK YOU FOR REGISTER IN MOUNTFUEL WELCOME IN MOUNT FUEL FAMILY');
+                window.location.href = "loginform.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

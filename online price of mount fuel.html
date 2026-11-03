@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MountFuel - Fuel Prices</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #0a0a0a;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #facc15;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 60px 10%;
+  background: linear-gradient(120deg, #0a0a0a, #1f2937);
+  color: white;
+}
+
+.header h1 {
+  font-size: 42px;
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #d1d5db;
+}
+
+/* PRICES SECTION */
+.prices {
+  padding: 60px 10%;
+  background: #111827;
+  color: white;
+}
+
+.price-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* PRICE CARD */
+.price-card {
+  background: #1f2937;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+  background: #272f3d;
+}
+
+.price-card h3 {
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.unit {
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #facc15;
+  color: black;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* FOOTNOTE */
+.note {
+  text-align: center;
+  margin-top: 40px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html">
+    <img src="e:\my project\mount fuel\ChatGPT Image May 25, 2026, 03_17_31 PM.png" alt="MountFuel Logo" width="100">
+   </a>
+  <div class="logo"></div>
+  <div>
+    <a href="homepage of mountfuel.html">Home</a>
+    <a href="about page ikora neza.html">About Us</a>
+    <a href="services section of mount fuel.html">Services</a>
+    <a href="online price of mount fuel.html">Fuel Prices</a>
+    <a href="fuelstation of mountfuel.html">Stations</a>
+    <a href="orderfuel of mountfuel.html">Order Fuel</a>
+    <a href="contact page.html">Contact</a>
+    <a href="map station of mount fuel.html">map</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="header" id="home">
+  <h1>Fuel Prices</h1>
+  <p>cost of petrol and diesel updated in MountFuel</p>
+</section>
+
+<!-- PRICES -->
+<section class="prices" id="prices">
+
+  <h2 style="text-align:center; color:#facc15;">Latest Fuel Rates</h2>
+
+  <div class="price-container">
+
+    <div class="price-card">
+      <h3>Petrol (Super)</h3>
+      <div class="price">1,850 RWF</div>
+      <div class="unit">per liter</div>
+      <div class="badge">Updated Today</div>
+    </div>
+
+    <div class="price-card">
+      <h3>Diesel</h3>
+      <div class="price">1,720 RWF</div>
+      <div class="unit">per liter</div>
+      <div class="badge">Updated Today</div>
+    </div>
+
+    <div class="price-card">
+      <h3>Kerosene</h3>
+      <div class="price">1,650 RWF</div>
+      <div class="unit">per liter</div>
+      <div class="badge">Updated Today</div>
+    </div>
+
+    <div class="price-card">
+      <h3>Industrial Fuel</h3>
+      <div class="price">1,900 RWF</div>
+      <div class="unit">per liter</div>
+      <div class="badge">Updated Today</div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    * Ibiciro bishobora guhinduka bitewe n’isoko n’igihe.
+  </div>
+
+</section>
+
+</body>
+</html>

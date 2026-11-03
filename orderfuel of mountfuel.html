@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MountFuel - Order Fuel</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #111827;
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  background: #0a0a0a;
+  position: sticky;
+  top: 0;
+}
+
+nav .logo {
+  color: #facc15;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+nav a:hover {
+  color: #facc15;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 50px 10%;
+  background: linear-gradient(120deg, #0a0a0a, #1f2937);
+}
+
+.header h1 {
+  color: #facc15;
+  font-size: 42px;
+}
+
+/* FORM */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #1f2937;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #facc15;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #facc15;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eab308;
+}
+
+/* RESULT */
+.result {
+  margin-top: 15px;
+  padding: 10px;
+  background: #0a0a0a;
+  border-radius: 8px;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="homepage of mountfuel.html">
+    <img src="e:\my project\mount fuel\ChatGPT Image May 25, 2026, 03_17_31 PM.png" alt="MountFuel Logo" width="100">
+   </a>
+  <div class="logo">MountFuel</div>
+  <div>
+        <a href="homepage of mountfuel.html">Home</a>
+        <a href="about page ikora neza.html">About Us</a>
+        <a href="services section of mount fuel.html">Services</a>
+        <a href="online price of mount fuel.html">Fuel Prices</a>
+        <a href="fuelstation of mountfuel.html">Stations</a>
+        <a href="orderfuel of mountfuel.html">Order Fuel</a>
+        <a href="contact page.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Order Fuel Online</h1>
+  <p>fill form inorder to take petrol every where</p>
+</div>
+
+<!-- FORM -->
+<div class="container">
+
+  <label>names</label>
+  <input type="text" id="name" placeholder="write your names">
+
+  <label>telephone number</label>
+  <input type="text" id="phone" placeholder="+250...">
+
+  <label>types of petrol</label>
+  <select id="fuel">
+    <option value="Petrol">Petrol</option>
+    <option value="Diesel">Diesel</option>
+    <option value="Gas">Gas</option>
+  </select>
+
+  <label>Litres</label>
+  <input type="number" id="litres" placeholder="Ex: 10">
+
+  <label>place to be destinated</label>
+  <textarea id="location" placeholder="write where needed"></textarea>
+
+  <label>method of payment</label>
+  <select id="payment">
+    <option>MTN Mobile Money</option>
+    <option>Airtel Money</option>
+    <option>Cash on Delivery</option>
+  </select>
+
+  <button onclick="submitOrder()">Submit Order</button>
+
+  <div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+function submitOrder() {
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let fuel = document.getElementById("fuel").value;
+  let litres = document.getElementById("litres").value;
+  let location = document.getElementById("location").value;
+  let payment = document.getElementById("payment").value;
+
+  if(!name || !phone || !litres || !location){
+    alert("Please fill all required fields!");
+    return;
+  }
+
+  let total = litres * 1800; // average price simulation
+
+  let result = document.getElementById("result");
+  result.style.display = "block";
+
+  result.innerHTML = `
+    ✅ Order Confirmed! <br><br>
+    👤 Name: ${name} <br>
+    📞 Phone: ${phone} <br>
+    ⛽ Fuel: ${fuel} <br>
+    📊 Litres: ${litres}L <br>
+    📍 Location: ${location} <br>
+    💳 Payment: ${payment} <br><br>
+    💰 Estimated Cost: <b>${total.toLocaleString()} RWF</b>
+  `;
+
+  // clear form
+  document.getElementById("name").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("litres").value = "";
+  document.getElementById("location").value = "";
+}
+
+</script>
+
+</body>
+</html>

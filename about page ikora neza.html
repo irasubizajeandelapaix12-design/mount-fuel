@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MountFuel - About Us</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #111827;
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  background: #0a0a0a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  color: #facc15;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 60px 10%;
+  background: linear-gradient(120deg, #0a0a0a, #1f2937);
+}
+
+.header h1 {
+  color: #facc15;
+  font-size: 42px;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+
+.tab-btn {
+  padding: 10px 15px;
+  border: none;
+  background: #1f2937;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab-btn.active {
+  background: #facc15;
+  color: black;
+}
+
+/* CONTENT BOX */
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+  background: #1f2937;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.5s;
+}
+
+.content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEAM */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.member {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.member:hover {
+  transform: scale(1.05);
+  background: #1f2937;
+}
+
+.member img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+/* LIST */
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #d1d5db;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  .header h1 {
+    font-size: 30px;
+  }
+}
+nav{
+    background:#0d1b2a;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    color:#ffb703;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ffb703;
+}
+
+</style>
+</head>
+
+<body>
+<nav>
+  <a href="index.html">
+    <img src="e:\my project\mount fuel\ChatGPT Image May 25, 2026, 03_17_31 PM.png" alt="MountFuel Logo" width="100">
+   </a>
+    <div class="logo"></div>
+
+    <ul>
+        <li><a href="homepage of mountfuel.html">Home</a></li>
+        <li><a href="about page ikora neza.html">About Us</a></li>
+        <li><a href="services section of mount fuel.html">Services</a></li>
+        <li><a href="online price of mount fuel.html">Fuel Prices</a></li>
+        <li><a href="fuelstation of mountfuel.html">Stations</a></li>
+        <li><a href="orderfuel of mountfuel.html">Order Fuel</a></li>
+        <li><a href="contact page.html">Contact</a></li>
+        <li><a href="map station of mount fuel.html">map</a></li>
+    </ul>
+</nav>
+
+<div class="header">
+  <h1>About MountFuel</h1>
+  <p>know history, mission, vision and our team</p>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="openTab('history')">History</button>
+  <button class="tab-btn" onclick="openTab('mission')">Mission</button>
+  <button class="tab-btn" onclick="openTab('vision')">Vision</button>
+  <button class="tab-btn" onclick="openTab('values')">Values</button>
+  <button class="tab-btn" onclick="openTab('team')">Team</button>
+</div>
+
+<!-- CONTENT -->
+<div id="history" class="content show">
+  <h2 style="color:#facc15;">History of MountFuel</h2>
+  <p>
+    MountFuel was established in 2020 as a new company providing fuel services in Kigali.
+    This company aims to deliver quality services across the country.
+  </p>
+</div>
+
+<div id="mission" class="content">
+  <h2 style="color:#facc15;">Mission</h2>
+  <p> provide fuel services faster, clearly and help country development.</p>
+</div>
+
+<div id="vision" class="content">
+  <h2 style="color:#facc15;">Vision</h2>
+  <p>to be the leading company in providing energy solutions across East Africa.</p>
+</div>
+
+<div id="values" class="content">
+  <h2 style="color:#facc15;">Values</h2>
+  <ul>
+    <li>✔ experience</li>
+    <li>✔ truthness</li>
+    <li>✔ participation</li>
+    <li>✔ Innovation</li>
+  </ul>
+</div>
+
+<div id="team" class="content">
+
+  <h2 style="color:#facc15;">workers teami</h2>
+
+  <div class="team">
+
+    <div class="member">
+      <img src="d:\pictures\IMG-20260513-WA0003.jpg">
+      <h3>MOUNT CEO</h3>
+      <p>CEO</p>
+    </div>
+
+    <div class="member">
+      <img src="d:\pictures\IMG-20260513-WA0003.jpg">
+      <h3>Aline</h3>
+      <p>Operations</p>
+    </div>
+
+    <div class="member">
+      <img src="d:\pictures\IMG-20260513-WA0003.jpg">
+      <h3>Patrick</h3>
+      <p>Logistics</p>
+    </div>
+
+    <div class="member">
+      <img src="d:\pictures\IMG-20260513-WA0003.jpg">
+      <h3>Grace</h3>
+      <p>Support</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+// 🔘 tabs function
+function openTab(id) {
+
+  let contents = document.querySelectorAll(".content");
+  contents.forEach(c => c.classList.remove("show"));
+
+  document.getElementById(id).classList.add("show");
+
+  // buttons active
+  let btns = document.querySelectorAll(".tab-btn");
+  btns.forEach(b => b.classList.remove("active"));
+
+  event.target.classList.add("active");
+}
+
+// ✨ animation on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".content").forEach(el => {
+  observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>

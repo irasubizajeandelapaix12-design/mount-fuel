@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MountFuel Footer JS</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* PAGE */
+body {
+  background: #111827;
+  color: white;
+  min-height: 200vh;
+}
+
+/* FOOTER */
+footer {
+  background: #0a0a0a;
+  padding: 50px 10%;
+  margin-top: 100px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.logo {
+  color: #facc15;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+a {
+  color: #d1d5db;
+  text-decoration: none;
+  display: block;
+  margin: 6px 0;
+}
+
+a:hover {
+  color: #facc15;
+}
+
+/* BOTTOM */
+.bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #1f2937;
+  padding-top: 20px;
+  color: #9ca3af;
+}
+
+/* BACK TO TOP BUTTON */
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #facc15;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+}
+
+/* DARK MODE */
+.light {
+  background: #f3f4f6;
+  color: black;
+}
+
+.light footer {
+  background: #ffffff;
+  color: black;
+}
+</style>
+</head>
+
+<body>
+
+<!-- DEMO CONTENT -->
+<h1 style="text-align:center; padding:50px;">
+  Scroll Down to See Footer Features
+</h1>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-container">
+
+    <div>
+      <div class="logo">MountFuel</div>
+      <p>Reliable fuel services across Rwanda.</p>
+      <button onclick="toggleMode()">🌙 Toggle Mode</button>
+    </div>
+
+    <div>
+      <h3 style="color:#facc15;">Links</h3>
+      <a href="#home" onclick="clicked('Home')">Home</a>
+      <a href="#services" onclick="clicked('Services')">Services</a>
+      <a href="#prices" onclick="clicked('Prices')">Prices</a>
+    </div>
+
+    <div>
+      <h3 style="color:#facc15;">Contact</h3>
+      <p>📍 Kigali, Rwanda</p>
+      <p>📞 +250 788 123 456</p>
+      <p>✉ info@mountfuel.rw</p>
+    </div>
+
+  </div>
+
+  <div class="bottom">
+    © <span id="year"></span> MountFuel. All rights reserved.
+  </div>
+
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="topBtn" onclick="topFunction()">↑</button>
+
+<script>
+
+// 📅 auto year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// 🔝 show button on scroll
+window.onscroll = function() {
+  let btn = document.getElementById("topBtn");
+  if (document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+
+// 🔝 scroll to top
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// 🌙 dark/light mode
+function toggleMode() {
+  document.body.classList.toggle("light");
+}
+
+// 📩 click feedback
+function clicked(name) {
+  alert(name + " page selected ✔");
+}
+
+</script>
+
+</body>
+</html>
